@@ -1,0 +1,11 @@
+.comments_block {
+  /* display: flex; */
+  /* flex-direction: column; */
+  flex-shrink: 0;
+  align-items: flex-start;
+  height: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.5rem 0;
+  overflow-y: auto;
+}

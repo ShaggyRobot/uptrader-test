@@ -1,0 +1,43 @@
+.comment_input {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px 0px 20px 0px #00000070;
+  animation: input 0.25s forwards ease;
+  z-index: 100;
+}
+
+.txt_area {
+  width: 100%;
+  resize: none;
+}
+
+@keyframes input {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.title {
+  display: block;
+  text-align: start;
+  font-size: small;
+}
+
+.btn_block {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}

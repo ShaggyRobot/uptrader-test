@@ -1,0 +1,39 @@
+.projects_page {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.projects_list {
+  display: grid;
+  width: min(754px, 90%);
+  margin: 1rem auto auto;
+  grid-template-columns: repeat(auto-fit, 240px);
+  gap: 1rem;
+  justify-content: center;
+}
+
+.create_btn {
+  display: flex;
+  opacity: 50%;
+  height: 168px;
+  width: 240px;
+  border-radius: 0.5rem;
+  border: 2px dashed black;
+  transition: all 0.3s ease;
+}
+
+.create_btn:hover {
+  border: 6px dashed white;
+  border-radius: 0;
+}
+
+.icon {
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
+.create_btn:hover .icon {
+  transform: scale(2) rotate(180deg);
+}

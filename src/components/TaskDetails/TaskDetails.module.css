@@ -1,0 +1,204 @@
+.task_details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  width: min(600px, 95vw);
+  max-height: 95vh;
+  background-color: white;
+  border-radius: 0.3rem;
+  overflow-y: auto;
+}
+
+.comment_block_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: start;
+  margin-bottom: -1rem;
+  font-size: small;
+  font-weight: bold;
+}
+
+.comment_btn {
+  display: flex;
+  gap: 0.3rem;
+  width: fit-content;
+  place-self: flex-end;
+  margin-top: -0.5rem;
+}
+
+.submit_btn:not(:disabled) {
+  background-color: lightgreen;
+  border-color: lightgreen;
+}
+
+.submit_btn:disabled {
+  pointer-events: none;
+}
+
+.comment_icon {
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.status {
+  position: absolute;
+
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  padding: 0 0.2rem;
+  font-size: small;
+  text-transform: capitalize;
+  top: 0.2rem;
+  left: 0.2rem;
+}
+
+.description {
+  height: fit-content;
+  flex-shrink: 0;
+  resize: vertical;
+  font-size: large;
+  background-color: white;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  /* font-family: Roboto; */
+}
+
+.task_info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.info_row {
+  display: flex;
+  gap: 0.25rem;
+  font-size: smaller;
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+  height: 1rem;
+}
+
+.icon {
+  height: 1rem;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.title_block {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: large;
+  font-weight: 700;
+}
+
+.title_edit_input {
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 700;
+  height: auto;
+  font-size: large;
+  text-align: center;
+}
+
+.icon_edit {
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.fieldset {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.fieldset label {
+  border-radius: 0.2rem;
+  width: fit-content;
+  padding: 0 0.5rem;
+  text-transform: capitalize;
+}
+
+.label[for='priority-low'] {
+  border: 1px solid lightskyblue;
+  color: rgb(62, 95, 116);
+  /* background-color: #83cc66; */
+}
+
+.input:checked + label[for='priority-low'] {
+  background-color: lightskyblue;
+  color: rgb(62, 95, 116);
+  /* border-color: none; */
+}
+
+.input:not(:checked):hover + label[for='priority-low'] {
+  background-color: lightskyblue;
+  border-color: lightskyblue;
+  /* color: white; */
+}
+
+.label[for='priority-normal'] {
+  border: 1px solid lightgreen;
+  color: rgb(71, 117, 71);
+  /* background-color: #d7d788; */
+}
+
+.input:checked + label[for='priority-normal'] {
+  background-color: lightgreen;
+  color: rgb(71, 117, 71);
+}
+
+.input:not(:checked):hover + label[for='priority-normal'] {
+  background-color: lightgreen;
+  border-color: lightgreen;
+  /* color: white; */
+}
+
+.label[for='priority-high'] {
+  color: rgb(128, 73, 73);
+  border: 1px solid lightcoral;
+}
+
+.input:checked + label[for='priority-high'] {
+  background-color: lightcoral;
+  color: rgb(128, 73, 73);
+}
+
+.input:not(:checked):hover + label[for='priority-high'] {
+  background-color: lightcoral;
+  border-color: lightcoral;
+  /* color: white; */
+}
+
+.subtasks {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: start;
+}
+
+.subtask_input {
+  height: 24px;
+}
+
+.subtask_input_btn {
+  margin-left: 0.5rem;
+}
+

@@ -1,0 +1,15 @@
+.create_project {
+  display: flex;
+  flex-direction: column;
+  border-radius: .3rem;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: white;
+  width: min(90vw, 400px);
+}
+
+.btn_block {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
