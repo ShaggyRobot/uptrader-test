@@ -5,7 +5,7 @@ const getTimeDiff = (start: Date, end: Date) => {
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
-  return `${!hours ? minutes + 'm' : ''} ${hours ? hours + 'h' : ''} ${
+  return `${!hours ? minutes + 'm' : ''} ${hours && !days ? hours + 'h' : ''} ${
     days ? days + 'd' : ''
   }`;
 };

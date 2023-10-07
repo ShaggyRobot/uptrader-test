@@ -1,4 +1,5 @@
 .project_tile {
+  position: relative;
   display: flex;
   width: 240px;
   height: 168px;
@@ -21,6 +22,20 @@
   font-size: 1.2rem;
   text-transform: capitalize;
   /* margin-bottom: 1rem; */
+}
+
+.delete_icon {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  height: 1.5rem;
+  z-index: 200;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.delete_icon:hover {
+  transform: scale(1.1);
 }
 
 .info_row {
