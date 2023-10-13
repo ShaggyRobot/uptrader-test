@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { State, deleteProject } from '../../redux/store';
+import { State } from '../../redux/store';
 
 import styles from './ProjectsPage.module.css';
 import { ModalComponent } from '../../components/ModalComponent/ModalComponent';
@@ -11,13 +11,8 @@ import addIcon from '../../assets/icons/add_circle.svg';
 
 function ProjectsPage(): JSX.Element {
   const projects = useSelector((state: State) => state.projects);
-  const dispatch = useDispatch();
 
   const [modalOpen, setModalOpen] = useState(false);
-
-  const deleteHandler = (id: string) => {
-    dispatch(deleteProject(id));
-  };
 
   const openModal = () => {
     setModalOpen(true);

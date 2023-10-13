@@ -27,10 +27,8 @@ function CreateTask(props: Props): JSX.Element {
     filesAttached: [],
   });
 
-  const { projects, taskCount } = useSelector((state: State) => state);
+  const { taskCount } = useSelector((state: State) => state);
   const dispatch = useDispatch();
-
-  const project = projects.find((project) => project.id === projectId);
 
   const createTask = () => {
     const newTask: Task = {
@@ -48,7 +46,7 @@ function CreateTask(props: Props): JSX.Element {
   const handleFormChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, type, value } = e.target;
+    const { name, value } = e.target;
     setTask({ ...task, [name]: value });
   };
 

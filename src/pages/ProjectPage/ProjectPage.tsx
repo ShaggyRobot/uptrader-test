@@ -42,7 +42,7 @@ function ProjectPage(): JSX.Element {
   }, {} as TasksObj);
 
   const onDragEnd = (res: DropResult) => {
-    const { destination, source, draggableId } = res;
+    const { destination, source } = res;
     if (!destination) return;
     if (
       destination.droppableId === source.droppableId &&
