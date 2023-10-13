@@ -1,18 +1,23 @@
 import { useState } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import { useDispatch } from 'react-redux';
 
-import { Task } from '../../redux/types';
-
-import { ModalComponent } from '../ModalComponent/ModalComponent';
 import { TaskDetails } from '../TaskDetails/TaskDetails';
-import { getTimeDiff } from '../../utils';
+import { ModalComponent } from '../ModalComponent/ModalComponent';
+import { ConfirmationDialog } from '../ConfirmationDialog/ConfirmationDialog';
 
-import start from '../../assets/icons/event_start.svg';
+
 import timer from '../../assets/icons/timer.svg';
 import completed from '../../assets/icons/done.svg';
-import styles from './TaskTile.module.css';
-import { useDispatch } from 'react-redux';
+import start from '../../assets/icons/event_start.svg';
+import deleteIcon from '../../assets/icons/trash_bin.svg';
+
+import { Task } from '../../redux/types';
 import { deleteTask } from '../../redux/store';
+
+import { getTimeDiff } from '../../utils';
+
+import styles from './TaskTile.module.css';
 
 type Props = {
   task: Task;
@@ -21,9 +26,10 @@ type Props = {
 
 function TaskTile(props: Props): JSX.Element {
   const { task, index } = props;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const timeAtWork = task.dateCompleted
     ? getTimeDiff(new Date(task.dateCompleted), new Date(task.dateCreated))
@@ -31,7 +37,10 @@ function TaskTile(props: Props): JSX.Element {
 
   const handleClick = () => {
     setModalOpen(true);
-    // dispatch(deleteTask({ projectId: task.projectId, taskId: task.id }));
+  };
+
+  const handleDeleteTask = () => {
+    dispatch(deleteTask({ projectId: task.projectId, taskId: task.id }));
   };
 
   return (
@@ -42,6 +51,13 @@ function TaskTile(props: Props): JSX.Element {
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
+          <img
+            src={deleteIcon}
+            alt='delete-icon'
+            className={styles.delete_task_icon}
+            onClick={() =>setConfirmOpen(true)}
+          />
+
           <div
             className={styles.task_component}
             onClick={handleClick}
@@ -107,6 +123,12 @@ function TaskTile(props: Props): JSX.Element {
           <ModalComponent open={modalOpen} setOpen={setModalOpen}>
             <TaskDetails task={task} timeAtWork={timeAtWork} />
           </ModalComponent>
+          <ConfirmationDialog
+            dialogOpen={confirmOpen}
+            setDialogOpen={setConfirmOpen}
+            message='Delete Task?'
+            subjAction={handleDeleteTask}
+          />
         </div>
       )}
     </Draggable>

@@ -12,6 +12,7 @@
 
 .task_wrapper {
   margin-bottom: 1rem;
+  position: relative;
   /* height: fit-content; */
 }
 
@@ -57,6 +58,20 @@
 
 .icon {
   height: 100%;
+}
+
+.delete_task_icon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0;
+  height: 1.5rem;
+  z-index: 200;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.delete_task_icon:hover {
+  transform: scale(1.1);
 }
 
 .priority {
